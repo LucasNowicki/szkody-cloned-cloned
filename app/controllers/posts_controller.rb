@@ -9,6 +9,16 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   
+  def send_email
+    response = Post.sendEmail(params[:id])
+    
+    if response == 200
+      render json: {tusk: 'cwel'}.to_json, status: :ok
+    else
+      render json: nil, status: 400
+    end
+  end
+  
   def create
     @post = Post.new(post_params)
     
