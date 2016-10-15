@@ -1,10 +1,25 @@
-<div><%= @post.mark %></div>
-<div><%= @post.model %></div> 
-<div><%= @post.year %></div>
-<div><%= @post.registration %></div>
-<div><%= @post.owner %></div>
-
-<%= image_tag @post.document.url(:thumbnail) %>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Marka</th>
+            <th>Model</th>
+            <th>Produkcja</th>
+            <th>Tablice</th>
+            <th>Właściciel</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr>
+            <td><%= @post.mark %></td>
+            <td><%= @post.model %></td>
+            <td><%= @post.year %></td>
+            <td><%= @post.registration %></td>
+            <td><%= @post.owner %></td>
+        </tr>
+    </tbody>
+</table>
+<%= image_tag @post.document.url(:thumb) %>
 
 <%= link_to "Edycja Szkody", edit_post_path(@post) %>
 

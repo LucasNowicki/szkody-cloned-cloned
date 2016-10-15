@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-    has_attached_file :document, styles: {thumb: ["200x200>", :png] }
+    has_attached_file :document, styles: {thumb: ["300x300>", :png] }
     validates_attachment :document, content_type: { content_type: 'application/pdf' }
     
     

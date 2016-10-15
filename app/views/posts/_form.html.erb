@@ -1,17 +1,44 @@
 <%= form_for @post, html: { multipart: true } do |f| %>
-    <%= f.label :mark %>
-    <%= f.text_field :mark %><br>
-    <%= f.label :model %>
-    <%= f.text_field :model %><br>
-    <%= f.label :year %>
-    <%= f.text_field :year %><br>
-    <%= f.label :registration %>
-    <%= f.text_field :registration %><br>
-    <%= f.label :owner %>
-    <%= f.text_field :owner %><br>
-    <br>
-    <%= f.label :document %>
-    <%= f.file_field :document %><br>
-    <br>
-    <%= f.submit %>
+
+
+<table class="table table-striped">
+    
+    <tbody>
+        <tr>
+            <td><%= f.label :Mark %></td>
+            <td><%= f.text_field :mark %></td>
+        </tr>
+        
+        <tr>
+            <td><%= f.label :Model %></td>
+            <td><%= f.text_field :model %></td>
+        </tr>
+        
+        <tr>
+            <td><%= f.label :Year %></td>
+            <td><%= f.text_field :year %></td>
+        </tr>
+        
+        <tr>
+            <td><%= f.label :Registration %></td>
+            <td><%= f.text_field :registration %></td>
+        </tr>
+        
+        <tr>
+            <td><%= f.label :Owner %></td>
+            <td><%= f.text_field :owner %></td>
+        </tr>
+        
+        <tr>
+            <td><%= f.label :document %></td>
+            <td><%= f.file_field :document %></td>
+        </tr>
+ 
+         <tr>
+            <td></td>
+            <td><%= f.submit %></td>
+        </tr>
+  
+    </tbody>
+    
 <% end %>
