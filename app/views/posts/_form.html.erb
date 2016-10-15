@@ -1,0 +1,17 @@
+<%= form_for @post, html: { multipart: true } do |f| %>
+    <%= f.label :mark %>
+    <%= f.text_field :mark %><br>
+    <%= f.label :model %>
+    <%= f.text_field :model %><br>
+    <%= f.label :year %>
+    <%= f.text_field :year %><br>
+    <%= f.label :registration %>
+    <%= f.text_field :registration %><br>
+    <%= f.label :owner %>
+    <%= f.text_field :owner %><br>
+    <br>
+    <%= f.label :document %>
+    <%= f.file_field :document %><br>
+    <br>
+    <%= f.submit %>
+<% end %>

@@ -1,0 +1,13 @@
+<h1> Zestawienie szkód</h1>
+
+<% @posts.each do |post| %>
+    <%= post.mark %>
+    <%= post.model %>
+    <%= post.year %>
+    <%= post.registration %>
+    <%= post.owner %>
+    
+    <%= link_to "Szczegóły", post %><br>
+    <br>
+
+<% end %>

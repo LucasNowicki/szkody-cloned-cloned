@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mark: MyString
+  model: MyString
+  year: MyString
+  registration: MyString
+  owner: MyString
+
+two:
+  mark: MyString
+  model: MyString
+  year: MyString
+  registration: MyString
+  owner: MyString

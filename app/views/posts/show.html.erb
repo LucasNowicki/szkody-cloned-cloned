@@ -1,0 +1,11 @@
+<div><%= @post.mark %></div>
+<div><%= @post.model %></div> 
+<div><%= @post.year %></div>
+<div><%= @post.registration %></div>
+<div><%= @post.owner %></div>
+
+<%= image_tag @post.document.url(:thumbnail) %>
+
+<%= link_to "Edycja Szkody", edit_post_path(@post) %>
+
+<%= link_to "Usun Szkode", post_path(@post), method: :delete, data: {confirm: "Czy na pewno chcesz usunać szkode?"}%>
