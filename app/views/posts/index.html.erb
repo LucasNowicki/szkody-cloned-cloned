@@ -23,7 +23,7 @@
             <td><%= post.registration %></td>
             <td><%= post.owner %></td>
             <td><%= link_to "Pobierz", post.document.url %></td>
-            <%#<td><%= link_to 'Pobierz async', { :controller => 'posts', :action => 'send_email', :id => post.id }, :method => :get, :remote => true %></td>
+            <td><%= link_to 'Wyślij szkodę do liczenia', { :controller => 'posts', :action => 'send_email', :id => post.id }, :method => :get, :remote => true %></td>
             
             <td><%= link_to "Szczegóły", post %></td>
         </tr>

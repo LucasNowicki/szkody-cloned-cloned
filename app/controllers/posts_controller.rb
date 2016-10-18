@@ -14,6 +14,7 @@ class PostsController < ApplicationController
     
     if response == 200
       render json: {tusk: 'cwel'}.to_json, status: :ok
+
     else
       render json: nil, status: 400
     end

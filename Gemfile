@@ -27,6 +27,8 @@ gem "paperclip", "~> 5.0.0"
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 
+gem 'figaro', '~> 1.1', '>= 1.1.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
