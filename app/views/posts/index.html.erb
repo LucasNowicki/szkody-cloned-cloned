@@ -1,5 +1,5 @@
-<div style="color: red; margin-left: 10px; margin-bottom: 5px; size: 12px;" id="tujakcossierozkurwi"></div>
-<div style="color: blue; margin-left: 20px; size: 8px;" id="tujakcossierozkurwi2"></div>
+<div style="color: green; margin-left: 100px; margin-bottom: 5px; size: 14px;" id="tujakcossierozkurwi"></div>
+<div style="color: green; margin-left: 100px; size: 10px;" id="tujakcossierozkurwi2"></div>
 
 <h1> Zestawienie szkód</h1>
 <table class="table table-hover">
@@ -10,16 +10,16 @@
             <th>Produkcja</th>
             <th>Tablice</th>
             <th>Właściciel</th>
+            <th>Majchrzak</th>
+            <th>Solace</th>
+            <th>PCWO</th>
+            <th>Zapisz kwoty</th>
             <th></th>
             <th></th>
             <th></th>
         </tr>
     </thead>
 
-    <h5>
-        <%= @gowno %>
-    </h5>
-    
     <tbody>
         <% @posts.each do |post| %>
         <tr>
@@ -28,6 +28,10 @@
             <td><%= post.year %></td>
             <td><%= post.registration %></td>
             <td><%= post.owner %></td>
+            <td>Kwota 1</td>
+            <td>Kwota 2</td>
+            <td>Kwota 3</td>
+            <td></td>
             <td><%= link_to "Pobierz", post.document.url %></td>
             <td><%= link_to 'Wyślij szkodę do liczenia', { :controller => 'posts', :action => 'send_email', :id => post.id }, :method => :get, :remote => true %></td>
             

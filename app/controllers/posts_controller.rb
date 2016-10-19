@@ -14,14 +14,14 @@ class PostsController < ApplicationController
     x = Post.sendEmail(params[:id])
     
     if x == 200
-      @wiadomosc = 'Udalo sie'
-      @wiadomosc2= 'Wszystko poszlo zajebisce'
+      @wiadomosc = 'Udalo sie, szkoda wysłana do przeliczenia.'
+      @wiadomosc2= 'Wszystko będzie dobrze!'
       respond_to do |format|
         format.js
       end
     else
-      @wiadomosc = 'cos sie rozkurwilo'
-      @wiadomosc2= 'Rozkurwilo sie na amen'
+      @wiadomosc = 'Coś się rozkurwiło na amen.'
+      @wiadomosc2= 'Szkoda nie wysłana do liczenia :('
       respond_to do |format|
         format.js
       end
