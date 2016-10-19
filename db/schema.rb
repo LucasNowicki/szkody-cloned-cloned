@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161014172424) do
+ActiveRecord::Schema.define(version: 20161019080343) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "mark"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 20161014172424) do
     t.string   "document_content_type"
     t.integer  "document_file_size"
     t.datetime "document_updated_at"
+    t.string   "oc"
+    t.string   "partial"
+    t.string   "private"
+    t.string   "after"
+    t.string   "credit"
+    t.string   "poland"
+    t.string   "pole"
+    t.string   "attorney"
+    t.string   "sold"
+    t.string   "invoice"
+    t.string   "deal"
   end
 
 end

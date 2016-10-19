@@ -1,38 +1,46 @@
 <%= form_for @post, html: { multipart: true, class: 'form-inline' } do |f| %>
 
 <div class="formularz">
-    <div class="input-group">
+  <div class="span7 text-center">
+    <div class="col-sm-2 input-group">
       <label for="rg-from">Marka Pojazdu</label>
       <%= f.text_field :mark, placeholder: 'Marka pojazdu', class: 'form-control' %>
     </div>    
     
-    <div class="input-group">
+    <div class="col-sm-2 input-group">
       <label for="rg-from">Model Pojazdu</label>
       <%= f.text_field :model, placeholder: 'Model pojazdu', class: 'form-control' %>
     </div>        
     
-    <div class="input-group">
+    <div class="col-sm-2 input-group">
       <label for="rg-from">Rok Produkcji</label>
       <%= f.text_field :year, placeholder: 'Rok produkcji', class: 'form-control' %>
     </div>        
 
-    <div class="input-group">
+    <div class="col-sm-2 input-group">
       <label for="rg-from">Numer rejestracyjny</label>
       <%= f.text_field :registration, placeholder: 'Numer rejestracyjny', class: 'form-control' %>
     </div>  
     
-    <div class="input-group">
+    <div class="col-sm-2 input-group">
       <label for="rg-from">Właściciel</label>
       <%= f.text_field :owner, placeholder: 'Właściciel', class: 'form-control' %>
     </div>  
     
-    <div class="input-group">
+    <div class="col-sm-2 input-group">
       <label for="rg-from">Kosztorys</label>
     <%= f.file_field :document,  class: 'btn'%>
-    </div>    
+    </div>
+    </div>
     
     <div>
         <br>
+    </div>
+    
+    <hr class="divider">
+    
+    <div>
+      <br>
     </div>
     
     <div class="span7 text-center">
@@ -40,11 +48,101 @@
           <%= f.submit "Dodaj szkodę", class: 'btn btn-primary' %>
         </div>
     </div>
-    <div><br></div>
+    
+    <div>
+      <br>
+    </div>
     
 </div>
 
+<hr class="divider">
 
+<div class="formularz"> 
+
+    <div class="input-group col-md-offset-1 col-md-5">
+      <label for="rg-from">1. Szkoda z OC czy AC?</label>
+      <%= f.text_field :oc, value: "OC", class: 'form-control' %>
+      </div>
+    
+    
+    <div class="input-group col-md-5">
+      <label for="rg-from">2. Szkoda całkowita czy częściowa?</label>
+      <%= f.text_field :partial, value: "Częściowa", class: 'col-sm-2 form-control' %>
+    </div>
+    
+    <div>
+      <br>
+    </div>    
+        
+    <div class="input-group col-md-offset-1 col-md-5">
+      <label for="rg-from">3. Auto prywatne czy firmowe? (wpłacono brutto ,netto czy netto plus 50% vat?)</label>
+      <%= f.text_field :private, value: "Prywatne", class: 'form-control' %>
+    </div>
+
+    
+    <div class="input-group col-md-5">
+      <label for="rg-from">4. Co klient zrobił z samochodem po szkodzie, jeśli sprzedał uszkodzone to za ile?</label>
+      <%= f.text_field :after, value: "Naprawił", class: 'form-control' %>
+    </div>
+    
+    <div>
+      <br>
+    </div>
+    
+    <div class="input-group col-md-offset-1 col-md-5">
+      <label for="rg-from">5. Czy auto jest w kredycie bądź leasingu?</label>
+      <%= f.text_field :credit, value: "Nie", class: 'form-control' %>
+    </div>
+    
+    <div class="input-group col-md-5">
+      <label for="rg-from">6. Czy szkoda miała miejsce na terenie Polski?</label>
+      <%= f.text_field :poland, value: "Tak", class: 'form-control' %>
+    </div>
+        
+    <div>
+      <br>
+    </div>
+    
+    <div class="input-group col-md-offset-1 col-md-5">
+      <label for="rg-from">7. Czy sprawca to Polak (auto na polskich nr rej.)?</label>
+      <%= f.text_field :pole, value: "Tak", class: 'form-control' %>
+    </div>
+
+
+    <div class="input-group col-md-5">
+      <label for="rg-from">8. Czy w sprawie ustanowieni zostali pełnomocnicy?</label>
+      <%= f.text_field :attorney, value: "Nie", class: 'form-control' %>
+    </div>
+        
+    <div>
+      <br>
+    </div>
+    
+    <div class="input-group col-md-offset-1 col-md-5">
+      <label for="rg-from">9. Czy szkoda została sprzedana innemu podmiotowi?</label>
+      <%= f.text_field :sold, value: "Nie", class: 'form-control' %>
+    </div>
+        
+    
+    <div class="input-group col-md-5">
+      <label for="rg-from">10. Czy klient przekazywał do ubezpieczalni umowę sprzedaży auta lub rachunki dotyczące naprawy auta?</label>
+      <%= f.text_field :invoice, value: "Nie", class: 'form-control' %>
+    </div>
+        
+    <div>
+      <br>
+    </div>
+    
+    <div class="input-group col-md-offset-1 col-md-10">
+      <label for="rg-from">11. Czy klient zawarł z ubezpieczalnią ugodę lub występował do ubezpieczalni z propozycją ugody?</label>
+      <%= f.text_field :deal, value: "Nie", class: 'form-control' %>
+    </div>
+  
+
+    
+    <div>
+      <br>
+    </div>
 
     
 <% end %>
