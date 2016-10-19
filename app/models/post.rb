@@ -15,7 +15,6 @@ class Post < ActiveRecord::Base
     def self.sendEmail(post_id)
         post = Post.find(post_id)
         
-       
  
         wiadomosc_email = "Kliknąłes w #{post.mark}, #{post.year}, i cos tam kurwa #{post.registration}. Zajebiscie."
         # https://bitbucket.org/mailchimp/mailchimp-api-ruby/

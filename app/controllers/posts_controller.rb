@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
   
   def index
-    @gowno = params[:jakis_string]
     @posts = Post.all
   end
   
@@ -14,6 +13,7 @@ class PostsController < ApplicationController
     x = Post.sendEmail(params[:id])
     
     if x == 200
+      Countmailer.sendtocount.deliver
       @wiadomosc = 'Udalo sie, szkoda wysłana do przeliczenia.'
       @wiadomosc2= 'Wszystko będzie dobrze!'
       respond_to do |format|
