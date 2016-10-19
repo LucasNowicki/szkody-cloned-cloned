@@ -16,13 +16,17 @@
             <td><%= @post.year %></td>
             <td><%= @post.registration %></td>
             <td><%= @post.owner %></td>
+            <td>Majchrzak</td>
+            <td>Solace</td>
+            <td>PCWO</td>
         </tr>
     </tbody>
 </table>
-<%= image_tag @post.document.url(:thumb) %>
+
 
 <br>
      <div class="span7 text-center">
+         <%= link_to "Wyświetl Kosztorys", @post.document.url, class: 'btn btn-primary' %>
         <%= link_to "Edycja Szkody", edit_post_path(@post), class: 'btn btn-primary'%>
         <%= link_to "Usun Szkode", post_path(@post), method: :delete, data: {confirm: "Czy na pewno chcesz usunać szkode?"}, class: 'btn btn-primary'%>
     </div>

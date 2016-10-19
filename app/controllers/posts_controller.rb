@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
   
   def index
+    @gowno = params[:jakis_string]
     @posts = Post.all
   end
   
@@ -10,18 +11,26 @@ class PostsController < ApplicationController
   end
   
   def send_email
-    response = Post.sendEmail(params[:id])
+    x = Post.sendEmail(params[:id])
     
-    if response == 200
-      render json: {tusk: 'cwel'}.to_json, status: :ok
-
+    if x == 200
+      @wiadomosc = 'Udalo sie'
+      @wiadomosc2= 'Wszystko poszlo zajebisce'
+      respond_to do |format|
+        format.js
+      end
     else
-      render json: nil, status: 400
+      @wiadomosc = 'cos sie rozkurwilo'
+      @wiadomosc2= 'Rozkurwilo sie na amen'
+      respond_to do |format|
+        format.js
+      end
     end
   end
   
   def create
     @post = Post.new(post_params)
+    # Post.create(mark: 'cwel', model: 'tusk', year: '2015', registration: 'smiec')      
     
     if @post.save
       redirect_to @post

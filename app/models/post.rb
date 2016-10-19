@@ -26,6 +26,8 @@ class Post < ActiveRecord::Base
         
         puts wiadomosc_email
         
+        # post = nil
+        
         if post != nil
             return 200
         else
