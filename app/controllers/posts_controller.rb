@@ -11,11 +11,10 @@ class PostsController < ApplicationController
   
   def send_email
     x = Post.sendEmail(params[:id])
-    
-    if x == 200
-      Countmailer.sendtocount.deliver
-      @wiadomosc = 'Udalo sie, szkoda wysłana do przeliczenia.'
-      @wiadomosc2= 'Wszystko będzie dobrze!'
+  
+    if x[0] == 200
+      @wiadomosc = "Udalo sie, szkoda wysłana do przeliczenia."
+      @wiadomosc2= "Mail o tytule #{ x[1] } został wysłany."
       respond_to do |format|
         format.js
       end
