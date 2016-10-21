@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     x = Post.sendEmail(params[:id])
   
     if x[0] == 200
-      @wiadomosc = "Udalo sie, szkoda wysłana do przeliczenia."
+      @wiadomosc = "Wszystko będzie dobrze! Szkoda została wysłana do przeliczenia."
       @wiadomosc2= "Mail o tytule #{ x[1] } został wysłany."
       respond_to do |format|
         format.js
