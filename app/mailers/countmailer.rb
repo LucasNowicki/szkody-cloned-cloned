@@ -6,9 +6,14 @@ class Countmailer < ApplicationMailer
         # email_attachment = post.document.url
         puts "---------------------------"
         puts @wysylka.document_file_name
-        #puts email_attachment
         puts "---------------------------"
-        attachments["#{@wysylka.document_file_name} Tusk to kurwa jebana"] = File.read(@wysylka.document.path)
+        attachments["#{@wysylka.document_file_name}"] = File.read(@wysylka.document.path)
+        
+        mail(to: 'lucas.nowicki@gmail.com', subject: "#{@wysylka.mark} #{@wysylka.model} #{@wysylka.year} #{@wysylka.registration} #{@wysylka.owner}".upcase) #aby zrobic interpolacje stringu, musi byc podwojny cudzysłów "" a nie ''
+
+    end
+
+end
         # File.read("public/system/attachments/#{@wysylka.document_file_name}")
         #jarek to tez cwel :( 
         # bo wyjebales @wysylka, ktora jest w templecie :) - w sendtocount.html.erb mam tak zajebane zeby byla @wysylka wiem
@@ -28,9 +33,3 @@ class Countmailer < ApplicationMailer
         # chujowy sposob czatowania kurwa, na razie
         #troche, ale moze mi troche wiedzy zostanie z tych Twoich komentarzy nie zapomnij zrobic git push
         #zara zrobie i jade na hamburgera :P Spoko, bez odbioru, elo, elo elo 3 2 0!
-        
-        mail(to: 'lucas.nowicki@gmail.com', subject: "#{@wysylka.mark} #{@wysylka.model} #{@wysylka.year} #{@wysylka.registration} #{@wysylka.owner}".upcase) #aby zrobic interpolacje stringu, musi byc podwojny cudzysłów "" a nie ''
-
-    end
-
-end
