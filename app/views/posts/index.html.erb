@@ -14,9 +14,12 @@
             <th>Solace</th>
             <th>PCWO</th>
             <th>Zapisz kwoty</th>
+            <th>Z polecenia.</th>
+            <th>Kosztorys</th>
             <th></th>
             <th></th>
             <th></th>
+            <th>Wyświetl</th>
         </tr>
     </thead>
 
@@ -32,8 +35,14 @@
             <td>Kwota 2</td>
             <td>Kwota 3</td>
             <td>Zapisz kwoty</td>
+            <td>tusk</td>
             <td><%= link_to "Pobierz", post.document.url %></td>
-            <td><%= link_to 'Wyślij szkodę do liczenia', { :controller => 'posts', :action => 'send_email', :id => post.id }, :method => :get, :remote => true %></td>
+            <td><%= link_to 'MAJCHRZAK', { :controller => 'posts', :action => 'send_majchrzak', :id => post.id }, :method => :get, :remote => true, class: "btn btn-primary btn-sm", data: { disable_with: "<i class='i class='fa fa-circle-o-notch fa-spin'>
+      </i> Wysyłam..."} %></td>
+            <td><%= link_to 'PCWO', { :controller => 'posts', :action => 'send_pcwo', :id => post.id }, :method => :get, :remote => true, class: "btn btn-primary btn-sm", data: { disable_with: "<i class='i class='fa fa-circle-o-notch fa-spin'>
+      </i> Wysyłam..."} %></td>
+      <td><%= link_to 'SOLACE', { :controller => 'posts', :action => 'send_solace', :id => post.id }, :method => :get, :remote => true, class: "btn btn-primary btn-sm", data: { disable_with: "<i class='i class='fa fa-circle-o-notch fa-spin'>
+      </i> Wysyłam..."} %></td>
             
             <td><%= link_to "Szczegóły", post %></td>
         </tr>

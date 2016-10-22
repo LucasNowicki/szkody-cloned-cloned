@@ -1,0 +1,25 @@
+<p>Witam, w załączeniu przesyłam kosztorys do przeliczenia szkody na <%= @wysylka.mark %> <%= @wysylka.model %> <%= @wysylka.registration %></p><br>.
+
+1. Szkoda z OC czy AC (jeśli AC to prosimy skan polisy)?<br>
+<%= @wysylka.oc %><br>
+2. Szkoda całkowita czy częściowa?<br>
+<%= @wysylka.partial %><br>
+3. Auto prywatne czy firmowe (wpłacono brutto ,netto czy netto plus 50% vat)?<br>
+<%= @wysylka.private %><br>
+4. Co klient zrobił z samochodem po szkodzie ,jeśli sprzedał uszkodzone to za ile?<br>
+<%= @wysylka.after %><br>
+5. Czy auto jest w kredycie bądź leasingu?<br>
+<%= @wysylka.credit %><br>
+6. Czy szkoda miała miejsce na terenie Polski?<br>
+<%= @wysylka.poland %><br>
+7. Czy sprawca to Polak (auto na polskich nr rej.)?<br>
+<%= @wysylka.pole %><br>
+8.  Czy w sprawie ustanowieni zostali pełnomocnicy (czy klient podpisywał jakieś upoważnienie czy pełnomocnictwo)?<br>
+<%= @wysylka.attorney %><br>
+9. Czy szkoda została sprzedana innemu podmiotowi (czy klient podpisywał inną cesję)?<br>
+<%= @wysylka.sold %><br>
+10. Czy klient przekazywał do ubezpieczalni umowę sprzedaży auta lub rachunki dotyczące naprawy auta ? <br>
+<%= @wysylka.invoice %><br>
+11. Czy klient zawarł z ubezpieczalnią ugodę lub występował do ubezpieczalni z propozycją ugody?<br>
+<%= @wysylka.deal %><br>
+<br>

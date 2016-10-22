@@ -9,11 +9,11 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   
-  def send_email
-    x = Post.sendEmail(params[:id])
+  def send_majchrzak
+    x = Post.sendMajchrzak(params[:id])
   
     if x[0] == 200
-      @wiadomosc = "Wszystko będzie dobrze! Szkoda została wysłana do przeliczenia."
+      @wiadomosc = "Wszystko będzie dobrze! Szkoda została wysłana do przeliczenia do Majchrzaka."
       @wiadomosc2= "Mail o tytule #{ x[1] } został wysłany."
       respond_to do |format|
         format.js
@@ -26,6 +26,46 @@ class PostsController < ApplicationController
       end
     end
   end
+  
+  
+  def send_pcwo
+    x = Post.sendPcwo(params[:id])
+  
+    if x[0] == 200
+      @wiadomosc = "Wszystko będzie dobrze! Szkoda została wysłana do przeliczenia do PCWO."
+      @wiadomosc2= "Mail o tytule #{ x[1] } został wysłany."
+      respond_to do |format|
+        format.js
+      end
+    else
+      @wiadomosc = 'Coś się rozkurwiło na amen.'
+      @wiadomosc2= 'Szkoda nie wysłana do liczenia :('
+      respond_to do |format|
+        format.js
+      end
+    end
+  end
+  
+  
+  def send_solace
+    x = Post.sendSolace(params[:id])
+  
+    if x[0] == 200
+      @wiadomosc = "Wszystko będzie dobrze! Szkoda została wysłana do przeliczenia do Solace."
+      @wiadomosc2= "Mail o tytule #{ x[1] } został wysłany."
+      respond_to do |format|
+        format.js
+      end
+    else
+      @wiadomosc = 'Coś się rozkurwiło na amen.'
+      @wiadomosc2= 'Szkoda nie wysłana do liczenia :('
+      respond_to do |format|
+        format.js
+      end
+    end
+  end
+  
+  
   
   def create
     @post = Post.new(post_params)

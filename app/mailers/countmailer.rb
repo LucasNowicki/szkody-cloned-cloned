@@ -1,9 +1,6 @@
 class Countmailer < ApplicationMailer
-    def sendtocount(id)
+    def majchrzak(id)
         @wysylka = Post.find(id)
-        
-        #attachments['rozkmina.pdf'] = File.read('public/system/posts/documents/000/000/006/original/rozkmina.pdf')
-        # email_attachment = post.document.url
         puts "---------------------------"
         puts @wysylka.document_file_name
         puts "---------------------------"
@@ -12,8 +9,41 @@ class Countmailer < ApplicationMailer
         mail(to: 'lucas.nowicki@gmail.com', subject: "#{@wysylka.mark} #{@wysylka.model} #{@wysylka.year} #{@wysylka.registration} #{@wysylka.owner}".upcase) #aby zrobic interpolacje stringu, musi byc podwojny cudzysłów "" a nie ''
 
     end
+    
+    def pcwo(id)
+        @wysylka = Post.find(id)
+        puts "---------------------------"
+        puts @wysylka.document_file_name
+        puts "---------------------------"
+        attachments["#{@wysylka.document_file_name}"] = File.read(@wysylka.document.path)
+        
+        mail(to: 'larthag@gmail.com', subject: "#{@wysylka.mark} #{@wysylka.model} #{@wysylka.year} #{@wysylka.registration} #{@wysylka.owner}".upcase) #aby zrobic interpolacje stringu, musi byc podwojny cudzysłów "" a nie ''
+
+    end
+    
+    def solace(id)
+        @wysylka = Post.find(id)
+        puts "---------------------------"
+        puts @wysylka.document_file_name
+        puts "---------------------------"
+        attachments["#{@wysylka.document_file_name}"] = File.read(@wysylka.document.path)
+        
+        mail(to: 'ekouprawa@gmail.com', subject: "#{@wysylka.mark} #{@wysylka.model} #{@wysylka.year} #{@wysylka.registration} #{@wysylka.owner}".upcase) #aby zrobic interpolacje stringu, musi byc podwojny cudzysłów "" a nie ''
+
+    end
 
 end
+
+
+
+
+
+
+
+
+
+
+
         # File.read("public/system/attachments/#{@wysylka.document_file_name}")
         #jarek to tez cwel :( 
         # bo wyjebales @wysylka, ktora jest w templecie :) - w sendtocount.html.erb mam tak zajebane zeby byla @wysylka wiem

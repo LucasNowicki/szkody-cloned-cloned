@@ -12,8 +12,34 @@ class Post < ActiveRecord::Base
     # Post.shit('cwel')
     #  => "gowno cwel" 
     
-    def self.sendEmail(post_id)
-        mail = Countmailer.sendtocount(post_id).deliver_now
+    def self.sendMajchrzak(post_id)
+        mail = Countmailer.majchrzak(post_id).deliver_now
+        
+        puts 'WYSLANO MAILA O TYTULE: ' + mail.subject
+        puts '* - ^ ' * 20
+        
+        if mail.from != nil
+            return 200, mail.subject
+        else
+            return 404, nil
+        end
+    end
+    
+    def self.sendPcwo(post_id)
+        mail = Countmailer.pcwo(post_id).deliver_now
+        
+        puts 'WYSLANO MAILA O TYTULE: ' + mail.subject
+        puts '* - ^ ' * 20
+        
+        if mail.from != nil
+            return 200, mail.subject
+        else
+            return 404, nil
+        end
+    end
+    
+     def self.sendSolace(post_id)
+        mail = Countmailer.solace(post_id).deliver_now
         
         puts 'WYSLANO MAILA O TYTULE: ' + mail.subject
         puts '* - ^ ' * 20
