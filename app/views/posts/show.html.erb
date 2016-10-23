@@ -6,6 +6,10 @@
             <th>Produkcja</th>
             <th>Tablice</th>
             <th>Właściciel</th>
+            <th>Majchrzak</th>
+            <th>PCWO</th>
+            <th>Solace</th>
+            <th>Moja Oferta</th>
         </tr>
     </thead>
     
@@ -16,13 +20,22 @@
             <td><%= @post.year %></td>
             <td><%= @post.registration %></td>
             <td><%= @post.owner %></td>
-            <td>Majchrzak</td>
-            <td>Solace</td>
-            <td>PCWO</td>
+            <td><%= @post.majchrzak %></td>
+            <td><%= @post.pcwo %></td>
+            <td><%= @post.solace %></td>
+            <td><%= @post.offer %></td>
         </tr>
     </tbody>
 </table>
 
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+        <div class="panel panel-default">
+          <div class="panel-heading">Komentarz</div>
+          <div class="panel-body"><%= @post.comment %></div>
+        </div>
+      </div>
+</div>
 
 <br>
      <div class="span7 text-center">

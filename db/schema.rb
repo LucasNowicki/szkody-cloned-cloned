@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022234833) do
+ActiveRecord::Schema.define(version: 20161023161356) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "mark"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20161022234833) do
     t.string   "pcwo"
     t.string   "solace"
     t.string   "recommendation"
+    t.string   "offer"
+    t.string   "comment"
   end
 
 end

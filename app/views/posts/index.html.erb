@@ -14,12 +14,14 @@
             <th>Majchrzak</th>
             <th>PCWO</th>
             <th>Solace</th>
-            <th>Zapisz oferty</th>
+            <th>Moja oferta</th>
             <th>Kosztorys</th>
             <th></th>
             <th></th>
             <th></th>
             <th>Edycja</th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
 
@@ -36,7 +38,7 @@
             <td><%= post.majchrzak %></td>
             <td><%= post.pcwo %></td>
             <td><%= post.solace %></td>
-            <td>zapisz</td>
+            <td><%= post.offer %></td>
             <td><%= link_to "Pobierz", post.document.url %></td>
             <td><%= link_to 'MAJCHRZAK', { :controller => 'posts', :action => 'send_majchrzak', :id => post.id }, :method => :get, :remote => true, class: "btn btn-primary btn-sm", data: { disable_with: "<i class='i class='fa fa-circle-o-notch fa-spin'>
       </i> Wysyłam..."} %></td>
@@ -45,8 +47,9 @@
       <td><%= link_to 'SOLACE', { :controller => 'posts', :action => 'send_solace', :id => post.id }, :method => :get, :remote => true, class: "btn btn-primary btn-sm", data: { disable_with: "<i class='i class='fa fa-circle-o-notch fa-spin'>
       </i> Wysyłam..."} %></td>
             
-            <td><%= link_to "Edytuj", edit_post_path(post), class: 'btn btn-default btn-sm'%></td>
-            <!--<td><%= link_to "Szczegóły", post %></td>-->
+            <td><%= link_to "Edytuj", edit_post_path(post), class: 'btn btn-warning btn-sm'%></td>
+            <td><%= link_to "Szczegóły", post, class: 'btn btn-default btn-sm' %></td>
+            <td><button type="button" class="btn btn-success">Umowa</button></td>
         </tr>
         <% end %>
     </tbody>
