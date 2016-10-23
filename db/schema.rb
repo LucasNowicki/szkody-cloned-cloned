@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161019080343) do
+ActiveRecord::Schema.define(version: 20161022234833) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "mark"
@@ -36,6 +36,10 @@ ActiveRecord::Schema.define(version: 20161019080343) do
     t.string   "sold"
     t.string   "invoice"
     t.string   "deal"
+    t.string   "majchrzak"
+    t.string   "pcwo"
+    t.string   "solace"
+    t.string   "recommendation"
   end
 
 end

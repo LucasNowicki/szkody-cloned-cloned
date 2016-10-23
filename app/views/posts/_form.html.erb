@@ -31,7 +31,24 @@
       <label for="rg-from">Kosztorys</label>
     <%= f.file_field :document,  id: 'file_field'%>
     </div>
+    
+     <div class="col-sm-2 input-group">
+      <label for="rg-from">Majchrzak</label>
+      <%= f.text_field :majchrzak, placeholder: 'Kwota od Majchrzaka', class: 'form-control' %>
+    </div> 
+    
+    <div class="col-sm-2 input-group">
+      <label for="rg-from">PCWO</label>
+      <%= f.text_field :pcwo, placeholder: 'Kwota od PCWO', class: 'form-control' %>
+    </div> 
+    
+    <div class="col-sm-2 input-group">
+      <label for="rg-from">Solace</label>
+      <%= f.text_field :solace, placeholder: 'Kwota od Solace', class: 'form-control' %>
+    </div>  
+    
     </div>
+    
     
     <div>
         <br>

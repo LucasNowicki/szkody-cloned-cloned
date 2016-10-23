@@ -10,32 +10,33 @@
             <th>Produkcja</th>
             <th>Tablice</th>
             <th>Właściciel</th>
-            <th>Majchrzak</th>
-            <th>Solace</th>
-            <th>PCWO</th>
-            <th>Zapisz kwoty</th>
             <th>Z polecenia.</th>
+            <th>Majchrzak</th>
+            <th>PCWO</th>
+            <th>Solace</th>
+            <th>Zapisz oferty</th>
             <th>Kosztorys</th>
             <th></th>
             <th></th>
             <th></th>
-            <th>Wyświetl</th>
+            <th>Edycja</th>
         </tr>
     </thead>
 
     <tbody>
         <% @posts.each do |post| %>
+        
         <tr>
             <td><%= post.mark %></td>
             <td><%= post.model %></td>
             <td><%= post.year %></td>
             <td><%= post.registration %></td>
             <td><%= post.owner %></td>
-            <td>Kwota 1</td>
-            <td>Kwota 2</td>
-            <td>Kwota 3</td>
-            <td>Zapisz kwoty</td>
-            <td>tusk</td>
+            <td><%= post.recommendation %></td>
+            <td><%= post.majchrzak %></td>
+            <td><%= post.pcwo %></td>
+            <td><%= post.solace %></td>
+            <td>zapisz</td>
             <td><%= link_to "Pobierz", post.document.url %></td>
             <td><%= link_to 'MAJCHRZAK', { :controller => 'posts', :action => 'send_majchrzak', :id => post.id }, :method => :get, :remote => true, class: "btn btn-primary btn-sm", data: { disable_with: "<i class='i class='fa fa-circle-o-notch fa-spin'>
       </i> Wysyłam..."} %></td>
@@ -44,7 +45,8 @@
       <td><%= link_to 'SOLACE', { :controller => 'posts', :action => 'send_solace', :id => post.id }, :method => :get, :remote => true, class: "btn btn-primary btn-sm", data: { disable_with: "<i class='i class='fa fa-circle-o-notch fa-spin'>
       </i> Wysyłam..."} %></td>
             
-            <td><%= link_to "Szczegóły", post %></td>
+            <td><%= link_to "Edytuj", edit_post_path(post), class: 'btn btn-default btn-sm'%></td>
+            <!--<td><%= link_to "Szczegóły", post %></td>-->
         </tr>
         <% end %>
     </tbody>
