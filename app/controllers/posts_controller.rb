@@ -2,7 +2,15 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
   
   def index
-    @posts = Post.all
+    scope = params[:scope]
+    if scope == 'no_offer'
+      @posts = Post.all.limit(2)
+      # @posts = Post.all.where(has_offer: false)
+    elsif scope == 'tablice'
+      @posts = Post.all.order(registration: 'ASC')
+    else
+      @posts = Post.all
+    end
   end
   
   def new

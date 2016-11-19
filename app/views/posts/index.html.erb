@@ -49,9 +49,25 @@
             
             <td><%= link_to "Edytuj", edit_post_path(post), class: 'btn btn-warning btn-sm'%></td>
             <td><%= link_to "Szczegóły", post, class: 'btn btn-default btn-sm' %></td>
-            <td><button type="button" class="btn btn-success">Umowa</button></td>
+            <td><button data-id_umowy="#detale_umowy_<%= post.id %>" type="button" class="btn btn-success guzik_umowa">Umowa</button></td>
         </tr>
+        <tr class="detale_umowy hidden" id="detale_umowy_<%= post.id %>">
+            <td colspan="17">
+                
+                TTUAJ DETALE UMOWY
+                
+            </td>
+        </tr>
+        
         <% end %>
     </tbody>
 </table>
 
+<script type='application/javascript'>
+    $(document).ready(function() {
+        $( ".guzik_umowa" ).click(function() {
+            var id_tr = $(this).data("id_umowy");
+            $(id_tr).toggleClass('hidden');
+        });
+    });
+</script>

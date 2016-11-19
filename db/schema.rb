@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161023161356) do
+ActiveRecord::Schema.define(version: 20161119212846) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "mark"
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20161023161356) do
     t.string   "year"
     t.string   "registration"
     t.string   "owner"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.string   "document_file_name"
     t.string   "document_content_type"
     t.integer  "document_file_size"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20161023161356) do
     t.string   "recommendation"
     t.string   "offer"
     t.string   "comment"
+    t.boolean  "has_offer",             default: false
   end
 
 end
