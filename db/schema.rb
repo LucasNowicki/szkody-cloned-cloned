@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161119212846) do
+ActiveRecord::Schema.define(version: 20161121111543) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "mark"
@@ -43,6 +43,26 @@ ActiveRecord::Schema.define(version: 20161119212846) do
     t.string   "offer"
     t.string   "comment"
     t.boolean  "has_offer",             default: false
+    t.string   "contract"
+    t.string   "dealdate"
+    t.string   "gender"
+    t.string   "name"
+    t.string   "card"
+    t.string   "authority"
+    t.string   "pesel"
+    t.string   "address"
+    t.string   "vin"
+    t.string   "damagedate"
+    t.string   "insurer"
+    t.string   "damagenumber"
+    t.string   "amount"
+    t.string   "gros"
+    t.string   "payment"
+    t.string   "place"
+    t.string   "bankaccount"
+    t.string   "dealtype"
+    t.string   "phone"
+    t.string   "email"
   end
 
 end

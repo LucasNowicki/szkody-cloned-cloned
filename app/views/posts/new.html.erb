@@ -1,3 +1,5 @@
+<%= form_for @post, html: { multipart: true, class: 'form-inline' } do |f| %>
+
 <div class="panel panel-default">
   <!-- Default panel contents -->
   <div class="panel-heading"><h2>Nowa szkoda</h2></div>
@@ -7,5 +9,19 @@
 
 
     
-  <%= render 'form' %>
+  <%= render 'basicinfo' %>
+  
+  <div class="span7 text-center">
+        <div class="input-group">
+          <%= f.submit "Dodaj szkodę", class: 'btn btn-primary btn-lg' %>
+        </div>
+        <div>
+          <hr class="divider">
+        </div>
+  </div>
+  
+  <%= render 'questionnaire' %>
+  
 </div>
+
+<% end %>
